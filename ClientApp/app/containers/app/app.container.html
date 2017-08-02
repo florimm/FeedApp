@@ -1,0 +1,13 @@
+<div class='container-fluid' >
+    <div class='row'>
+        <nav-menu title="Feed angular" [menuItems]="sources | async"></nav-menu>
+    </div>
+    <div class="row">
+        <div class='col-sm-12 body-content'>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="row">
+        <sticky-footer description="Created by FM"></sticky-footer>
+    </div>
+</div>
