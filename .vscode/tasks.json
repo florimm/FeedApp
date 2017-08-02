@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/angularApp.csproj"
+                "${workspaceRoot}/FeedApp.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
