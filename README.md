@@ -1,6 +1,7 @@
 # FeedApp
 ## RSS Feed web application
 build using:
+
     - dotnet core 2 preview
         - c#
         - javascript
