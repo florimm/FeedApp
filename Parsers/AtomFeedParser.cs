@@ -25,7 +25,7 @@ namespace FeedApp.Parsers
 				List<NewsItem> items = (from entry in doc.Descendants(d + "entry")
 										select new NewsItem
 										{
-											Id = (entry.Element(d + "id") != null ? entry.Element(d + "id").Value : entry.Element(d + "link").Value),
+											FeedItemId = (entry.Element(d + "id") != null ? entry.Element(d + "id").Value : entry.Element(d + "link").Value),
 											Title = entry.Element(d + "title").Value,
 											Description = (entry.Element(d + "summary").Value ?? ""),
 											Timestamp = DateHelper.Parse(entry.Element(d + "updated").Value ?? DateTime.Now.ToString()),

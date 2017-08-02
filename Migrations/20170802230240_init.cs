@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace FeedApp.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,9 +31,11 @@ namespace FeedApp.Migrations
                 name: "NewsItems",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FeedItemId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FeedSourceId = table.Column<int>(type: "int", nullable: false),
                     FeedType = table.Column<int>(type: "int", nullable: false),
                     FetchTime = table.Column<DateTime>(type: "datetime2", nullable: false),

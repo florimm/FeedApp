@@ -5,7 +5,8 @@ namespace FeedApp.ViewModels
 {
     public class NewsItemViewModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
+        public string FeedItemId { get; set; }
         public string Url { get; set; }
         public TimeSpan TimeSincePost { get; set; }
         public DateTime FetchTime { get; set; }

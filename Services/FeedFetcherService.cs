@@ -62,7 +62,7 @@ namespace FeedApp.Services
             }
             var newestItemByDate = items.OrderByDescending(t => t.Timestamp).First();
             var newestOldItemByDate = oldItems.OrderByDescending(t => t.Timestamp).First();
-            if(newestItemByDate.Id == newestOldItemByDate.Id)
+            if(newestItemByDate.FeedItemId == newestOldItemByDate.FeedItemId)
             {
                 return false;
             }

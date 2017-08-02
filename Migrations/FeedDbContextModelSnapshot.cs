@@ -45,12 +45,14 @@ namespace FeedApp.Migrations
 
             modelBuilder.Entity("FeedApp.Models.NewsItem", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Category");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("FeedItemId");
 
                     b.Property<int>("FeedSourceId");
 

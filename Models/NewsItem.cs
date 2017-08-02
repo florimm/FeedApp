@@ -8,7 +8,8 @@ namespace FeedApp.Models
 		{
 			timestamp = DateTime.Now;
 		}
-		public string Id { get; set; }
+		public int Id { get; set; }
+		public string FeedItemId {get; set;}
 		private DateTimeOffset timestamp;
 		public string Url { get; set; }
 		public DateTime FetchTime { get; set; }

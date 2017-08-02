@@ -12,8 +12,8 @@ using System;
 namespace FeedApp.Migrations
 {
     [DbContext(typeof(FeedDbContext))]
-    [Migration("20170802212825_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20170802230240_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,12 +46,14 @@ namespace FeedApp.Migrations
 
             modelBuilder.Entity("FeedApp.Models.NewsItem", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Category");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("FeedItemId");
 
                     b.Property<int>("FeedSourceId");
 

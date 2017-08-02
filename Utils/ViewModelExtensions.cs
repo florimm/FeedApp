@@ -18,6 +18,7 @@ namespace FeedApp.Utils
             return new NewsItemViewModel()
             {
                 Id = source.Id,
+                FeedItemId = source.FeedItemId,
                 Description = source.Description,
                 FeedSourceId = source.FeedSourceId,
                 Source = source.FeedSource.Name,

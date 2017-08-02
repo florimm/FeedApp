@@ -9,7 +9,7 @@ namespace FeedApp.Database
 
         public FeedDbContext(DbContextOptions options) : base(options)
         {
-            
+            //this.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
         public DbSet<FeedSource> FeedSources { get; set; }
@@ -17,7 +17,7 @@ namespace FeedApp.Database
 
     
         protected override void OnModelCreating(ModelBuilder builder)
-        {         
+        {
             base.OnModelCreating(builder);
         }
     }
