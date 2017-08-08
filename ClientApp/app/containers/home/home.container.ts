@@ -33,6 +33,9 @@ export class HomeContainer implements OnInit {
         route.params.subscribe(routParam => {
             if (routParam.id) {
                 this.newsItems = store.select(state => state.feedItems.items).map(newsItems => newsItems.filter(item => item.feedSourceId == routParam.id).sort(this.sortByDate));
+            } else if(routParam.category) {
+                this.newsItems = store.select(state => state.feedItems.items)
+                    .map(newsItems => newsItems.filter(item => item.category == routParam.category).sort(this.sortByDate));
             } else {
                 this.newsItems = store.select(state => state.feedItems.items).map(newsItems => newsItems.sort(this.sortByDate));
             }

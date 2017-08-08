@@ -38,7 +38,7 @@ namespace FeedApp
                     runAt: utcNow =>
                     {
                         var now = utcNow.AddHours(3.5);
-                        return now.Minute % 5 == 0 && now.Second == 1;
+                        return now.Minute % 1 == 0 && now.Second == 1;
                     },
                     order: 1);
             });
@@ -80,8 +80,6 @@ namespace FeedApp
                     defaults: new { controller = "Home", action = "Index" });
             });
             app.UseDNTScheduler();
-            // DataImporter.EnsureFeedSourceData(sourceDb,
-            //     Path.Combine(env.ContentRootPath, "sources.js"));
         }
     }
 }

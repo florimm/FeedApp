@@ -8,24 +8,26 @@
                         <feed-title [title]="newsItem.title"></feed-title>
                         <feed-description [content]="newsItem.description"></feed-description>
                         <hr class="divider" />
-                        <div class="footer">{{newsItem.source}} / {{newsItem.timestamp | date : "MMM d, h:mm a"}} / {{newsItem.category}}</div>
+                        <div class="footer">
+                            {{newsItem.source}} / {{newsItem.timestamp | date : "MMM d, h:mm a"}} / <a [routerLink]="['/feeds/category/' + newsItem.category]">{{newsItem.category}}</a>
+                        </div>
                     </div>
                 </a>
             </div>`,
     styles: [
         `.box {
             display: inline-block;
-    background: #f5f5f5;
-    padding: 1.5em;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 1.18);
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+            background: #f5f5f5;
+            padding: 1.5em;
+            margin: 0 0 1.5em;
+            width: 100%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 1.18);
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
         }
 
         .info h4 {

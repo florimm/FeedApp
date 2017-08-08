@@ -23,5 +23,6 @@ export interface INewsItem {
 	description: string;
 	title: string;
 	feedType: number;
-	feedSourceId: number;
+    feedSourceId: number;
+    category: string;
 }

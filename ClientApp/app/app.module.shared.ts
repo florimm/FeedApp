@@ -47,6 +47,7 @@ import { FeedEffects } from './effects/feed-sources.effects';
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeContainer },
             { path: 'feeds/:id', component: HomeContainer },
+            { path: 'feeds/category/:category', component: HomeContainer },
             { path: '**', redirectTo: 'home' }
         ])
     ],
