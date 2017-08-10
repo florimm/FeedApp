@@ -4,6 +4,7 @@ import { Observable } from "rxjs/Observable";
 import { LOAD_SOURCES, SAVE_SOURCE } from '../../actions/feed-sources.constants';
 import { IAppState } from '../../store';
 import * as models from '../../models';
+import * as selectors from '../../selectors';
 
 @Component({
     selector: 'feed-source-container',
@@ -17,6 +18,6 @@ export class FeedSourcesContainer implements OnInit {
     sources: Observable<models.IFeedSource[]>;
 
     constructor(private store: Store<IAppState>){
-        this.sources = store.select(state => state.feedSources.sources);
+        this.sources = store.select(selectors.getSources);
 	}
 }

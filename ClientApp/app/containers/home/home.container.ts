@@ -5,6 +5,7 @@ import { Observable } from "rxjs/Observable";
 import { LOAD_SOURCES, SAVE_SOURCE } from '../../actions/feed-sources.constants';
 import { IAppState } from '../../store';
 import * as models from '../../models';
+import * as selectors from '../../selectors';
 
 @Component({
     selector: 'home-container',
@@ -32,12 +33,16 @@ export class HomeContainer implements OnInit {
     constructor(private store: Store<IAppState>, route: ActivatedRoute) {
         route.params.subscribe(routParam => {
             if (routParam.id) {
-                this.newsItems = store.select(state => state.feedItems.items).map(newsItems => newsItems.filter(item => item.feedSourceId == routParam.id).sort(this.sortByDate));
+                this.newsItems = store.select(selectors.getFeedsItems)
+                    .map(newsItems => newsItems.filter(item => item.feedSourceId == routParam.id)
+                                                .sort(this.sortByDate));
             } else if(routParam.category) {
-                this.newsItems = store.select(state => state.feedItems.items)
-                    .map(newsItems => newsItems.filter(item => item.category == routParam.category).sort(this.sortByDate));
+                this.newsItems = store.select(selectors.getFeedsItems)
+                    .map(newsItems => newsItems.filter(item => item.category == routParam.category)
+                                                .sort(this.sortByDate));
             } else {
-                this.newsItems = store.select(state => state.feedItems.items).map(newsItems => newsItems.sort(this.sortByDate));
+                this.newsItems = store.select(selectors.getFeedsItems)
+                    .map(newsItems => newsItems.sort(this.sortByDate));
             }
         });
         
